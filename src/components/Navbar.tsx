@@ -8,12 +8,10 @@ import ChangeThemes from "./ChangesThemes";
 import toast from "react-hot-toast";
 import { menu } from "./menu/data";
 import MenuItem from "./menu/MenuItem";
-import useStore from "../zustand";
 
 const Navbar = () => {
   const [isFullScreen, setIsFullScreen] = React.useState(true);
   const element = document.getElementById("root");
-  const user = useStore((state) => state.setUser);
 
   const [isDrawerOpen, setDrawerOpen] = React.useState(false);
   const toggleDrawer = () => setDrawerOpen(!isDrawerOpen);
@@ -160,7 +158,6 @@ const Navbar = () => {
             <button
               className="text-left px-3 hover:bg-slate-200 rounded-sm"
               onClick={() => {
-                user({});
                 navigate("login");
               }}
             >
